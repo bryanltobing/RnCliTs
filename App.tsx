@@ -26,6 +26,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import {QuestionsBoard} from './components/QuestionBoard/QuestionBoard';
 
 const Section: React.FC<
   PropsWithChildren<{
@@ -92,6 +93,14 @@ const App = () => {
             Read the docs to discover what to do next:
           </Section>
           <LearnMoreLinks />
+          <QuestionsBoard
+            questions={[
+              'What is your gender?',
+              'What is your age?',
+              'What is your favorite food',
+            ]}
+            onSubmit={data => console.log(data)}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
